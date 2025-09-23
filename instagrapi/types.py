@@ -16,6 +16,9 @@ class TypesBaseModel(BaseModel):
         coerce_numbers_to_str=True
     )  # (jarrodnorwell) fixed city_id issue
 
+    def __init__(self, /, **data):
+        self.__dict__ = self.__class__.model_construct(**data).__dict__
+
 
 def validate_external_url(cls, v):
     if v is None or (v.startswith("http") and "://" in v) or isinstance(v, str):
