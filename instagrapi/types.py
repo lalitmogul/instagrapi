@@ -13,10 +13,13 @@ from pydantic import (
 
 class TypesBaseModel(BaseModel):
     model_config = ConfigDict(
-        coerce_numbers_to_str=True
+        coerce_numbers_to_str=True,
+        extra='allow',
+        arbitrary_types_allowed=True
     )  # (jarrodnorwell) fixed city_id issue
 
     def __init__(self, /, **data):
+        super().__init__(**data)
         self.__dict__ = self.__class__.model_construct(**data).__dict__
 
 
