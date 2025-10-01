@@ -20,6 +20,7 @@ class TypesBaseModel(BaseModel):
 
     def __init__(self, /, **data):
         super().__init__(**data)
+        self.__pydantic_extra__ = dict()
         self.__dict__ = self.__class__.model_construct(**data).__dict__
 
 
