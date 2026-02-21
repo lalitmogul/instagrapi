@@ -653,9 +653,9 @@ class LoginMixin(PreLoginFlowMixin, PostLoginFlowMixin):
             A boolean value
         """
         self.device_settings = device or {
-            "app_version": "269.0.0.18.75",
-            "android_version": 26,
-            "android_release": "8.0.0",
+            "app_version": "416.0.0.47.66",
+            "android_version": 33,
+            "android_release": "13.0.0",
             "dpi": "480dpi",
             "resolution": "1080x1920",
             "manufacturer": "OnePlus",
